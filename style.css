@@ -1,0 +1,42 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: "나눔바른고딕";
+  font-weight: bold;
+}
+#login .container #login-row #login-column {
+  margin-top: 100px;
+  max-width: 600px;
+  height: 520px;
+  border: 1px solid #9C9C9C;
+  background-color: white;
+}
+#login .container #login-row #login-column #login-form {
+  padding: 30px;
+  margin-top: -20px;
+}
+#sign-up .container{
+  margin-top: 50px;
+  max-width: 800px;
+}
+.footer {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+	padding: 15px 0;
+
+	text-align: center;
+
+	color: white;
+
+	background: blue;
+
+}

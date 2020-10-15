@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- 반응형 네비바 구성을 위해 클래스 expand로 묶고, lg가 반응점이 되도록 함. 테마는 검정 -->
+      <a class="navbar-brand" href="./index.html">3주차 실습</a> <!-- 네비바의 제목 부분 클릭하면 홈으로 돌아오도록 링크 -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">  <!-- 반응형으로 작동하는 버튼(네비바 토글러)를 생성, 데이터 토글방식은 콜렙스, 타켓은 id 네비바서포티드컨텐츠-->
+        <span class="navbar-toggler-icon"></span> <!-- 줄바꿈 요소가 없는 span 태그를 사용하여 버튼의 아이콘을 불러옴 -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- 반응점에서 콜렙스 할 내용물들 -->
+      <ul class="navbar-nav mr-auto"> <!-- 오른쪽 마진을 자동계산하는 unordered list -->
+        <li class="nav-item"> <!-- 네비바의 아이템 -->
+          <a class="nav-link" href="./login.html">로그인 </a> <!-- 로그인 페이지로 가는 링크 -->
+        </li>
+        <li class="nav-item active"> <!-- 회원가입 페이지에 들어왔으므로 li 아이템을 active로 설정 -->
+          <a class="nav-link" href="#">회원가입</a> <!-- 회원가입 페이지로 가는 링크 -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+    <div id = "sign-up"> <!--회원가입 컨테이너를 넣을 div를 생성 -->
+      <div class = "container"> <!-- 컨테이너 생성 -->
+        <div id="sign-up-row" class="row justify-content-center align-items-center"> <!-- 컨테이너의 행들은 뷰포트 가로, 세로의 중앙에 내용이 위치 -->
+            <div id="sign-up-column" class="col-lg-12"> <!--열을 1개의 블록을 설정 -->
+                <form id="sign-up-form" class="form"> <!-- 폼으로 회원가입 섹션을 감싼다. -->
+                    <h2 class= "text-center">회원가입</h2> <!-- 제목 -->
+                    <p class="text-secondary text-center">계정을 만드세요. 몇 가지 정보만 필요합니다</p> <!-- 간단한 내용 -->
+                  <div class="form-group IdInput"> <!-- 아이디 입력 -->
+                    <label for="id" class="text-primary">아이디:</label><br>
+                    <input type="email" name="id-input" id="id-input" placeholder="Email" class="form-control email_check" onchange="email_check()">
+                    <div id=email_valid></div>
+                  </div>
+                  <div class="form-group PasswordInput"> <!-- 비밀번호 입력 -->
+                    <label for="password" class="text-primary">비밀번호:</label><br>
+                    <input type="password" name="password-input" id="password-input" placeholder="Password" class="form-control password_check" onchange="password_check()">
+                      <div id=password_valid></div>
+                  </div>
+                  <div class="form-group passwordCheck"> <!-- 비밀번호 확인 -->
+                    <label for="password-check" class="text-primary">비밀번호 확인:</label><br>
+                    <input type="password" name="password-check-input" id="password-check-input" placeholder="Check your Password" class="form-control password_recheck" onchange="password_recheck()">
+                    <div id=password_check_valid></div>
+                  </div>
+                  <div class="form-group studentNumber"> <!-- 학번 입력 -->
+                    <label for="student-number" class="text-primary">학번 입력:</label><br>
+                    <input type="text" name="student-number-input" id="student-number-input" placeholder="Student Number" class="form-control student_number_check" onchange="studentnumber_major(this.value)">
+                    <div id=major_valid></div>
+                  </div>
+                  <div class="form-group major major-select"> <!-- 학과 선택 -->
+                    <label for="major-select" class="text-primary">학과선택:</label><br>
+                      <select class = "form-control" id= "major-select"> <!-- select로 드롭다운 효과 -->
+                        <option value="mech">기계공학부</option>
+                        <option value="com">컴퓨터공학부</option>
+                        <option value="meca">메카트로닉스공학부</option>
+                        <option value="design">디자인공학과</option>
+                        <option value="energy">에너지,신소재공학부</option>
+                        <option value="elc">전기,전자,통신공학부</option>
+                        <option value="arc">건축공학과</option>
+                        <option value="in">산업경영학부</option>
+                      </select>
+
+                  </div>
+                  <div class="form-group phone-number-input"> <!-- 휴대전화번호 입력-->
+                    <label for="phoneNumber" class="text-primary">휴대전화:</label><br>
+                    <input type="text" name="phoneNumber-input" id="phoneNumber-input" placeholder="Phone Number" class="form-control phonenumber_check" onchange="phonenum_check()">
+                    <div id=phonenum_valid></div>
+                  </div>
+                  <div class="text-center"> <!-- 제출 버튼 -->
+                    <button type="button" class="btn btn-primary signup_button" onclick = "checkAll()">
+                      제출
+                    </button>
+                    <a class="btn btn-danger cancel_button" href="https://google.com" role="button"> <!-- 취소 링크를 버튼으로 만들어서 누르면 구글로 나가도록 설정 -->
+                      취소
+                    </a>
+                  </div>
+                </div>
+              </div>
+                <footer> <!-- footer 태그로 개발자에게 메일보내는 기능을 생성 -->
+                  <div class="row col-lg-12 text-center"> <!-- 위쪽 마진이 150px이고 내용을 오른쪽 정렬하는 div를 선언 -->
+                    <a href="mailto:wngud9646@gmail.com"> <!-- 나에게 메일 보내는 a 태그를 작성 -->
+                      <span style="padding-right: 20px; font-size: 23px; color: gray" class="developer">개발자에게 메일보내기</a> <!-- span 태그로 줄바꿈 없이 내용을 작성, 동시에 style 속성으로 폰트 크기나 색상 결정 -->
+                    </div>
+              </footer>
+            </div>
+          </div>
+              <script src="sign_up.js"></script>
+              <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+              <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+              <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+ </body>
+</html>

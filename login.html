@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="utf-8">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"> <!-- 반응형 네비바 구성을 위해 클래스 expand로 묶고, lg가 반응점이 되도록 함. 테마는 검정 -->
+      <a class="navbar-brand" href="./index.html">3주차 실습</a> <!-- 네비바의 제목 부분 클릭하면 홈으로 돌아오도록 링크 -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">  <!-- 반응형으로 작동하는 버튼(네비바 토글러)를 생성, 데이터 토글방식은 콜렙스, 타켓은 id 네비바서포티드컨텐츠-->
+        <span class="navbar-toggler-icon"></span> <!-- 줄바꿈 요소가 없는 span 태그를 사용하여 버튼의 아이콘을 불러옴 -->
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent"> <!-- 반응점에서 콜렙스 할 내용물들 -->
+      <ul class="navbar-nav mr-auto"> <!-- 오른쪽 마진을 자동계산하는 unordered list -->
+        <li class="nav-item active"> <!-- 네비바의 아이템, 로그인 페이지므로 active 표시 -->
+          <a class="nav-link" href="#" onclick="return false;">로그인 </a> <!-- 이미 로그인 페이지이므로 클릭해도 무시하도록 함 -->
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="./sign_up.html">회원가입</a> <!-- 회원가입 페이지로 가는 링크 -->
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="login">  <!-- 로그인이라는 컨테이너를 포함할 div를 정의 -->
+    <div class="container"> <!-- 로그인 형식을 만들 컨테이너 정의 -->
+      <div id="login-row" class="row justify-content-center align-items-center"> <!-- 그리드 시스템의 행을 선언 이때, 이 행은 뷰포트의 가로와 세로의 가운데에 위치한다. -->
+        <div id="login-column" class="col-md-12"> <!-- 그리드 시스템의 열을 선언, lg 사이즈 그리드의 6개의 열을 사용 -->
+            <form id="login-form" class="form"> <!-- 폼으로 로그인과 비밀번호 섹션을 묶는다 -->
+              <h3 class="text-center"><img src = "./tech.jpg" /></h3> <!-- 헤더 부분에 이미지를 삽입 -->
+                <div class="form-group"> <!-- bootstrap에 정의된 클래스로 폼의 요소를 정의 -->
+                  <label for="username" class="text-primary">아이디:</label><br> <!-- 입력받는 부분을 라벨 태그로 정보를 표시, 클래스로 글자의 색상 변경-->
+                  <input type="text" name="username" id="username" placeholder="이메일을 입력하세요" class="form-control"> <!-- 로그인 박스 생성 -->
+                </div>
+                <div class="form-group">
+                  <label for="password" class="text-primary">비밀번호:</label><br> <!-- 입력받는 부분을 라벨 태그로 정보를 표시, 클래스로 글자의 색상 변경-->
+                  <input type="password" name="password" id="password" placeholder="비밀번호를 입력하세요" class="form-control"><!-- 비밀번호 박스 생성 -->
+                </div>
+                <div class="form-group">
+                  <label for="remember-me" class="text-primary"><span>아이디 기억</span> <span><input name="remember-me" type="checkbox"></span></label><br>
+                  <!-- 아이디 기억을 위한 체크박스를 표시할 라벨과 span 태그로 줄바꿈 없이 내용 작성 동시에 해당 줄에 채크박스 생성-->
+                  <input type="button" name="submit" class="btn btn-md btn-primary" value="로그인" onclick="login()">
+                </div>
+             </form>
+           </div>
+         </div>
+       </div>
+     </div>
+  <footer> <!-- footer 태그로 개발자에게 메일보내는 기능을 생성 -->
+    <div class="text-right" style="margin-top: 150px"> <!-- 위쪽 마진이 150px이고 내용을 오른쪽 정렬하는 div를 선언 -->
+      <a href="mailto:wngud9646@gmail.com"> <!-- 나에게 메일 보내는 a 태그를 작성 -->
+        <span style="padding-right: 20px; font-size: 23px; color: gray" class="developer">개발자에게 메일보내기</a> <!-- span 태그로 줄바꿈 없이 내용을 작성, 동시에 style 속성으로 폰트 크기나 색상 결정 -->
+      </div>
+</footer>
+<script src="login.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
